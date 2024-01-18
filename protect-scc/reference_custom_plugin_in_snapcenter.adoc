@@ -1,0 +1,216 @@
+---
+permalink: protect-scc/reference_custom_plugin_in_snapcenter.html 
+sidebar: sidebar 
+keywords: Custom plug-in 
+summary: SnapCenter サーバを使用して作成したカスタムプラグインをホストにインストールすると、アプリケーションのデータ保護を有効にすることができます。 
+---
+= SnapCenter のカスタムプラグイン
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+
+
+== SnapCenter のカスタムプラグイン
+
+Java 、 Perl 、またはネイティブ形式を使用して作成したカスタムプラグインを、 SnapCenter サーバを使用してホストにインストールし、アプリケーションのデータを保護することができます。このチュートリアルで提供されている手順を使用して SnapCenter ホストにインストールするには、プラグインをエクスポートしておく必要があります。
+
+
+
+=== プラグイン概要ファイルを作成しています
+
+プラグインを作成するたびに、概要ファイルが必要になります。概要ファイルには、プラグインの詳細が記述されています。ファイルの名前は、プラグイン記述子 .xml である必要があります。
+
+
+
+==== プラグイン記述子ファイルの属性とその重要度を使用する
+
+|===
+| 属性 | 説明 
+
+
+ a| 
+名前
+ a| 
+プラグインの名前。英数字を使用できます。たとえば、 DB2 、 MySQL 、 MongoDB などです
+
+ネイティブ形式で作成したプラグインの場合は、ファイルの拡張子を指定しないでください。たとえば、プラグインの名前が MongoDB である場合は、 MongoDB という名前を指定します。
+
+
+
+ a| 
+バージョン
+ a| 
+プラグインのバージョン。メジャーバージョンとマイナーバージョンの両方を含めることができます。たとえば、 1.0 、 1.1 、 2.0 、 2.1 のようになります
+
+
+
+ a| 
+表示名
+ a| 
+SnapCenterサーバーに表示するプラグイン名。同じプラグインの複数のバージョンが書き込まれている場合は、表示名がすべてのバージョンで同じであることを確認してください。
+
+
+
+ a| 
+プラグインタイプ（ PluginType ）
+ a| 
+プラグインの作成に使用する言語。サポートされている値は Perl 、 Java 、および Native です。
+標準のプラグインタイプには、 Unix/Linux シェルスクリプト、 Windows スクリプト、 Python 、またはその他のスクリプト言語が含まれています。
+
+
+
+ a| 
+osname のように指定し
+ a| 
+プラグインがインストールされているホスト OS の名前。有効な値はWindowsとです
+Linux：1 つのプラグインを、 Perl タイププラグインなど、複数の OS タイプに導入できます。
+
+
+
+ a| 
+osVersion をクリックします
+ a| 
+プラグインがインストールされているホスト OS のバージョン。
+
+
+
+ a| 
+ResourceName の略
+ a| 
+プラグインでサポート可能なリソースタイプの名前。例：database、instance、
+コレクション。
+
+
+
+ a| 
+親（ Parent ）
+ a| 
+ResourceNameが別のリソースタイプに階層的に依存している場合は
+親(Parent)-親リソースタイプを決定します
+
+たとえば、 DB2 プラグインの場合、 ResourceName 「 Database 」には親の「 Instance 」があります。
+
+
+
+ a| 
+FileSystemPlugin が必要です
+ a| 
+はいまたはいいえリカバリタブがであるかどうかを指定します
+リストアウィザードに表示されます。
+
+
+
+ a| 
+ResourceRequiresAuthentication の略
+ a| 
+はいまたはいいえリソースが自動検出されたかどうかを指定します
+自動検出のあとにデータ保護処理を実行するにはクレデンシャルが必要です
+ストレージを検出しています。
+
+
+
+ a| 
+FileSystemClone が必要です
+ a| 
+はいまたはいいえプラグインでクローン用にファイルシステムプラグインの統合が必要かどうかを指定します
+ワークフロー：
+
+|===
+カスタムプラグイン DB2 の Plugin_descriptor.xml ファイルの例は次のとおりです。
+
+....
+<Plugin>
+<SMSServer></SMSServer>
+<Name>DB2</Name>
+<Version>1.0</Version>
+<PluginType>Perl</PluginType>
+<DisplayName>Custom DB2 Plugin</DisplayName>
+<SupportedOS>
+<OS>
+<OSName>windows</OSName>
+<OSVersion>2012</OSVersion>
+</OS>
+<OS>
+<OSName>Linux</OSName>
+<OSVersion>7</OSVersion>
+</OS>
+</SupportedOS>
+<ResourceTypes>
+<ResourceType>
+<ResourceName>Database</ResourceName>
+<Parent>Instance</Parent>
+</ResourceType>
+<ResourceType>
+<ResourceName>Instance</ResourceName>
+</ResourceType>
+</ResourceTypes>
+<RequireFileSystemPlugin>no</RequireFileSystemPlugin>
+<ResourceRequiresAuthentication>yes</ResourceRequiresAuthentication>
+<SupportsApplicationRecovery>yes</SupportsApplicationRecovery>
+</Plugin>
+....
+
+
+=== ZIP ファイルを作成しています
+
+プラグインが開発され、記述子ファイルが作成されたら、プラグインファイルとを追加する必要があります
+Plugin_descriptor.xmlファイルをフォルダに移動してzip圧縮します。
+
+ZIP ファイルを作成する前に、次の点を考慮してください。
+
+* スクリプト名はプラグイン名と同じである必要があります。
+* Perlプラグインの場合、ZIPフォルダにスクリプトファイルとが格納されたフォルダが含まれている必要があります
+ディスクリプタファイルはこのフォルダの外にある必要があります。フォルダ名はと同じである必要があります
+プラグイン名。
+* Perlプラグイン以外のプラグインの場合は、ZIPフォルダに記述子とが含まれている必要があります
+スクリプトファイル。
+* OS のバージョンは番号である必要があります。
+
+
+例
+
+* DB2 プラグイン： DB2.pm と Plugin_descriptor.xml ファイルを「 DB2.zip 」に追加します。
+* Javaを使用して開発されたプラグイン：jarファイル、依存するjarファイル、およびを追加します
+Plugin_descriptor.xmlファイルをフォルダに保存してzip圧縮します。
+
+
+
+
+=== プラグインの ZIP ファイルをアップロードしています
+
+プラグインをで使用できるように、プラグインのZIPファイルをSnapCenterサーバにアップロードする必要があります
+目的のホストへの導入
+
+UI またはコマンドレットを使用して、プラグインをアップロードできます。
+
+* UI ： *
+
+* プラグインの ZIP ファイルを * Add * または * Modify Host * ワークフローウィザードの一部としてアップロードします
+* [ 選択 ] をクリックしてカスタムプラグインをアップロードします。 *
+
+
+* PowerShell ： *
+
+* uploadSmPluginPackage コマンドレット
++
+たとえば、 PS> Upload-SmPluginPackage-AbsolutePath c ： \DB2_1.zip のように入力します
+
++
+PowerShellコマンドレットの詳細については、SnapCenterコマンドレットのヘルプまたはを使用してください
+コマンドレットのリファレンス情報を参照してください。
+
+
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["SnapCenter ソフトウェアコマンドレットリファレンスガイド"^]。
+
+
+
+=== カスタムプラグインの導入
+
+アップロードしたカスタムプラグインが、の一部として目的のホストに導入できるようになります
+*[ホストの追加]および[ホストの変更]ワークフロー。には複数のバージョンのプラグインをアップロードできます
+SnapCenterサーバを選択すると、特定のホストに導入するバージョンを選択できます。
+
+プラグインのアップロード方法の詳細については、を参照してください。 link:task_add_hosts_and_install_plug_in_packages_on_remote_hosts_scc.html["ホストを追加し、プラグインパッケージをリモートホストにインストールする"]

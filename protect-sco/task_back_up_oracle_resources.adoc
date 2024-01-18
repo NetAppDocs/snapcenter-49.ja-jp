@@ -1,0 +1,125 @@
+---
+permalink: protect-sco/task_back_up_oracle_resources.html 
+sidebar: sidebar 
+keywords: backup, Oracle database, policy, schedule, verification, resources 
+summary: どのリソースグループにも含まれていないリソースは、のリソースページからバックアップすることができます。 
+---
+= Oracle リソースのバックアップ
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+どのリソースグループにも含まれていないリソースは、のリソースページからバックアップすることができます。
+
+.手順
+. 左側のナビゲーションペインで、*[リソース]*を選択し、リストから適切なプラグインを選択します。
+. [ リソース ] ページで、 [ 表示 ] リストから [ * データベース * ] を選択します。
+. をクリックします image:../media/filter_icon.png["フィルタアイコン"]をクリックし、ホスト名とデータベースタイプを選択してリソースをフィルタリングします。
++
+をクリックします image:../media/filter_icon.png["フィルタアイコン"] をクリックしてフィルタペインを閉じます。
+
+. バックアップするデータベースを選択します。
++
+Database - Protect （データベース - 保護）ページが表示されます。
+
+. [Resources]ページでは、次の手順を実行できます。
++
+.. チェックボックスを選択し、Snapshotコピー名に使用するカスタムの名前形式を入力します。
++
+例： `customtext_policy_hostname` または `resource_hostname`。デフォルトでは、Snapshotコピー名にタイムスタンプが付加されます。
+
+.. バックアップの対象から外すアーカイブログファイルのデスティネーションを指定します。
+
+
+. [Policies] ページで、次の手順を実行します。
++
+.. ドロップダウンリストから 1 つ以上のポリシーを選択します。
++
+
+NOTE: ポリシーを作成するには、をクリックします image:../media/add_policy_from_resourcegroup.gif["シンボルを追加します"]。
+
++
+[ 選択したポリシーのスケジュールを設定 ] セクションに、選択したポリシーが一覧表示されます。
+
+.. をクリックします image:../media/add_policy_from_resourcegroup.gif["シンボルを追加します"] [Configure Schedules]列で、ポリシーのスケジュールを設定します。
+.. [Add schedules for policy_policy_name_]ウィンドウでスケジュールを設定し、を選択します `OK`。
++
+_policy_name_は 、選択したポリシーの名前です。
+
++
+設定されたスケジュールは、 [ 適用されたスケジュール ] 列に一覧表示されます。
+
+
+
+. [Verification] ページで、次の手順を実行します。
++
+.. [Load locators]*をクリックしてSnapMirrorまたはSnapVault ボリュームをロードし、セカンダリストレージを検証します。
+.. をクリックします image:../media/add_policy_from_resourcegroup.gif["シンボルを追加します"] Configure Schedules （スケジュールの設定）列で、ポリシーのすべてのスケジュールタイプの検証スケジュールを設定します。
+ [+]
+[Add Verification Schedules_policy_name_]ダイアログボックスでは、次の手順を実行できます。
+.. [Run verification after backup] を選択します。
+.. [スケジュールされた検証を実行する]*を選択し、ドロップダウンリストからスケジュールタイプを選択します。
++
+
+NOTE: Flex ASM 設定では、カードの数が RAC クラスタ内のノード数より少ない場合、リーフノードで検証操作を実行できません。
+
+.. セカンダリストレージ上のバックアップを検証するには、セカンダリストレージ上で * Verify on secondary location * を選択します。
+.. [OK] をクリックします。
++
+設定した検証スケジュールは、 Applied Schedules 列にリスト表示されます。
+
+
+
+. [Notification]ページで、*[Email preference]*ドロップダウンリストからEメールを送信するシナリオを選択します。
++
+送信者と受信者のEメールアドレス、およびEメールの件名を指定する必要があります。リソース上で実行されたバックアップ処理のレポートを添付する場合は、 [ ジョブレポートの添付（ Attach Job Report ） ] を選択します。
+
++
+
+NOTE: Eメール通知を使用する場合は、GUIまたはPowerShellコマンドを使用して、SMTPサーバの詳細を指定しておく必要があります `Set-SmSmtpServer`。
+
+. 概要を確認し、 [ 完了 ] をクリックします。
++
+データベーストポロジのページが表示されます。
+
+. [ 今すぐバックアップ ] をクリックします。
+. Backup （バックアップ）ページで、次の手順を実行します。
++
+.. リソースに複数のポリシーを適用している場合は、ポリシーのドロップダウンリストから、バックアップに使用するポリシーを選択します。
++
+オンデマンドバックアップ用に選択したポリシーがバックアップスケジュールに関連付けられている場合は、スケジュールタイプに指定した保持設定に基づいてオンデマンドバックアップが保持されます。
+
+.. [ バックアップ ] をクリックします。
+
+
+. 操作の進行状況を監視するには、 * Monitor * > * Jobs * をクリックします。
+
+
+.完了後
+* AIXのセットアップでは、を使用できます `lkdev` コマンドを使用してロックします `rendev` コマンドを使用して、バックアップされたデータベースが格納されているディスクの名前を変更します。
++
+デバイスのロックまたは名前変更は、そのバックアップを使用してリストアしても、リストア処理には影響しません。
+
+* データベースクエリの実行時間がタイムアウト値を超えたためにバックアップ処理が失敗した場合は、を実行してORACLE_SQL_QUERY_TIMEOUTおよびORACLE_PLUGIN_SQL_QUERY_TIMEOUTパラメータの値を変更する必要があります `Set-SmConfigSettings` コマンドレット：
++
+パラメータの値を変更したら、次のコマンドを実行してSnapCenter Plug-in Loader（SPL）サービスを再起動します `/opt/NetApp/snapcenter/spl/bin/spl restart`
+
+* ファイルにアクセスできず、検証プロセス中にマウントポイントを使用できないと、エラーコード DBV-00100 specified file が表示されて処理が失敗することがあります。sco.properties の verification_delay パラメータと verification_retry_count パラメータの値を変更する必要があります。
++
+パラメータの値を変更したら、次のコマンドを実行してSnapCenter Plug-in Loader（SPL）サービスを再起動します `/opt/NetApp/snapcenter/spl/bin/spl restart`
+
+* MetroCluster 構成では、フェイルオーバー後に SnapCenter が保護関係を検出できない場合があります。
+* VMDK 上のアプリケーションデータおよび SnapCenter Plug-in for VMware vSphere の Java ヒープサイズが不足している場合、バックアップが失敗することがあります。
++
+Java のヒープサイズを増やすには、スクリプトファイル /opt/NetApp/init_scripts/scvservice_. を探します。このスクリプトでは、を実行します `do_start method` コマンドは、SnapCenter VMwareプラグインサービスを開始します。このコマンドを次のように更新します。 `Java -jar -Xmx8192M -Xms4096M`。
+
+
+
+.詳細については、こちらをご覧ください
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Unable_to_detect_SnapMirror_or_SnapVault_relationship_after_MetroCluster_failover["MetroCluster のフェイルオーバー後に SnapMirror 関係または SnapVault 関係を検出できません"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Oracle_RAC_One_Node_database_is_skipped_for_performing_SnapCenter_operations["SnapCenter 処理では、 Oracle RAC One Node データベースがスキップされます"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/Failed_to_change_the_state_of_an_Oracle_12c_ASM_database_from_shutdown_to_mount["Oracle 12c ASM データベースの状態を変更できませんでした"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Protection_and_Security/SnapCenter/What_are_the_customizable_parameters_for_backup_restore_and_clone_operations_on_AIX_systems["AIX システムでのバックアップ、リストア、クローニングの各処理のパラメータをカスタマイズできます"^] （ログインが必要）
+

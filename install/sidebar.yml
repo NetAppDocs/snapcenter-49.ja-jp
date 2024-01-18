@@ -1,0 +1,134 @@
+---
+section: install
+title: SnapCenter サーバのインストール
+entries:
+- title: インストールワークフロー
+  url: "/install/install_workflow.html"
+- title: SnapCenter サーバをインストールする準備をします
+  entries:
+  - title: ドメインとワークグループの要件
+    url: "/install/reference_domain_and_workgroup_requirements.html"
+  - title: スペースとサイジングの要件
+    url: "/install/reference_space_and_sizing_requirements.html"
+  - title: SANホストの要件
+    url: "/install/reference_san_host_requirements.html"
+  - title: サポートされるストレージシステムおよびアプリケーション
+    url: "/install/reference_supported_storage_systems_and_applications.html"
+  - title: サポートされているブラウザ
+    url: "/install/reference_supported_browsers.html"
+  - title: 接続とポートの要件
+    url: "/install/reference_connection_and_port_requirements.html"
+  - title: SnapCenter ライセンス
+    url: "/install/concept_snapcenter_licenses.html"
+  - title: クレデンシャルの認証方式を指定します
+    url: "/install/concept_authentication_methods_for_your_credentials.html"
+  - title: Storage Virtual Machine の接続とクレデンシャル
+    url: "/install/concept_svm_connections_and_credentials.html"
+  - title: 多要素認証（ MFA ）
+    entries:
+    - title: 多要素認証（MFA）を管理します。
+      url: "/install/enable_multifactor_authentication.html"
+    - title: REST API、PowerShell、SCCLIを使用して多要素認証（MFA）を管理
+      url: "/install/enable_multifactor_authentication_using_RestAPI_PowerShell_SCCLI.html"
+    - title: PowerShell、SCCLI、REST APIを使用してSnapCenterサーバでMFAを設定します
+      url: "/install/configure_mfa_using_powershell_sccli_restapi.html"
+- title: SnapCenter サーバをインストールします
+  url: "/install/task_install_the_snapcenter_server_using_the_install_wizard.html"
+- title: SnapCenter にログインします
+  url: "/install/task_log_in_to_snapcenter.html"
+- title: CA 証明書を設定します
+  entries:
+  - title: CA 証明書 CSR ファイルを生成します
+    url: "/install/reference_generate_CA_certificate_CSR_file.html"
+  - title: CA 証明書をインポートします
+    url: "/install/task_import_CA_certificates.html"
+  - title: CA 証明書のサムプリントを取得します
+    url: "/install/task_get_the_CA_certificate_thumbprint.html"
+  - title: Windows ホストプラグインサービスを使用して CA 証明書を設定する
+    url: "/install/task_configure_CA_certificate_with_Windows_host_plug-in_services.html"
+  - title: SnapCenter サイトで CA 証明書を設定します
+    url: "/install/task_configure_CA_certificate_with_snapcenter_site.html"
+  - title: SnapCenter サーバの CA 証明書を有効にします
+    url: "/install/task_enable_ca_certificates_for_snapcenter.html"
+- title: 双方向SSL通信を設定して有効にします
+  entries:
+  - title: 双方向SSL通信を設定します
+    url: "/install/task_configure_two_way_ssl.html"
+  - title: 双方向SSL通信を有効にします
+    url: "/install/task_enable_two_way_ssl.html"
+- title: 証明書ベースの認証を設定します
+  entries:
+  - title: SnapCenterサーバから認証局（CA）証明書をエクスポートします
+    url: "/install/task_export_ca_certificates_from_snapcenter_server.html"
+  - title: CA証明書をWindowsホストプラグインにインポートします
+    url: "/install/task_import_ca_certificate_to_windows_plugin_hosts.html"
+  - title: CA証明書をUNIXホストプラグインにインポートし、ルート証明書または中間証明書をSPL trust-storeに設定します
+    entries:
+    - title: CA証明書をUNIXホストプラグインにインポートします
+      url: "/install/task_import_ca_certificate_to_unix_plugin_hosts.html"
+    - title: ルート証明書または中間証明書を SPL の信頼ストアに設定します
+      url: "/install/task_configure_root_or_intermediate_certificates_to_trust_store.html"
+  - title: 証明書ベースの認証を有効にします
+    url: "/install/task_enable_certificate_based_authentication.html"
+- title: Active Directory 、 LDAP 、 LDAPS を設定します
+  entries:
+  - title: 信頼できない Active Directory ドメインを登録します
+    url: "/install/task_register_untrusted_active_directory_domains.html"
+  - title: LDAPS の CA クライアント証明書を設定します
+    url: "/install/task_configure_CA_client_certificate_for_LDAPS.html"
+- title: ハイアベイラビリティを設定する
+  entries:
+  - title: F5 を使用して SnapCenter サーバのハイアベイラビリティを構成します
+    url: "/install/concept_configure_snapcenter_servers_for_high_availabiity_using_f5.html"
+  - title: Microsoft Network Load Balancer を手動で設定します
+    url: "/install/concept_network_load_balanacing_and_application_request_routing_requirements.html"
+  - title: NLB から F5 に切り替えて高可用性を実現します
+    url: "/install/task_switch_from_nlb_to_f5_for_high_availability.html"
+  - title: SnapCenter MySQL リポジトリの高可用性
+    url: "/install/concept_high_availability_for_snapcenter_mysql_repository.html"
+  - title: SnapCenter 証明書をエクスポートする
+    url: "/install/task_export_snapcenter_certificates.html"
+- title: ロールベースアクセス制御（ RBAC ）の設定
+  entries:
+  - title: ユーザまたはグループを追加し、ロールとアセットを割り当てます
+    url: "/install/task_add_a_user_or_group_and_assign_role_and_assets.html"
+  - title: ロールを作成します
+    url: "/install/task_create_a_role.html"
+  - title: security login コマンドを使用して、 ONTAP RBAC ロールを追加します
+    url: "/install/task_add_an_rbac_role_using_security_login_commands.html"
+  - title: 最小権限を持つ SVM ロールを作成します
+    url: "/install/create-svm-roles-minimum-privileges.html"
+  - title: 最小限の権限で ONTAP クラスタロールを作成します
+    url: "/install/task_create_an_ontap_cluster_role_with_minimum_privileges.html"
+  - title: Active Directory の読み取り権限を有効にするように IIS アプリケーションプールを設定します
+    url: "/install/task_configure_iis_application_pools_to_enable_active_directory_read_permissions.html"
+- title: 監査ログを設定します
+  url: "/install/task_configure_audit_log_settings.html"
+- title: ストレージシステムを追加
+  url: "/install/task_add_storage_systems.html"
+- title: SnapCenter の標準コントローラベースのライセンスを追加します
+  url: "/install/concept_snapcenter_standard_controller_based_licenses.html"
+- title: SnapCenter の Standard 容量ベースのライセンスを追加
+  url: "/install/concept_snapcenter_standard_capacity_based_licenses.html"
+- title: ストレージシステムをプロビジョニング
+  entries:
+  - title: Windows ホストでストレージをプロビジョニングする
+    entries:
+    - title: LUN ストレージを設定します
+      url: "/install/concept_configure_lun_storage.html"
+    - title: igroup を作成して管理します
+      url: "/install/concept_create_and_manage_igroups.html"
+    - title: ディスクを作成および管理する
+      url: "/install/task_create_and_manage_disks.html"
+    - title: SMB 共有を作成および管理する
+      url: "/install/concept_create_and_manage_smb_shares.html"
+    - title: ストレージシステム上のスペースを再生する
+      url: "/install/task_reclaim_space_on_the_storage_system.html"
+    - title: PowerShell コマンドレットを使用してストレージをプロビジョニング
+      url: "/install/reference_provision_storage_using_powershell_cmdlets.html"
+  - title: VMware 環境でストレージをプロビジョニング
+    url: "/install/concept_provision_storage_in_vmware_environments.html"
+- title: SnapCenter サーバとの安全な MySQL 接続を設定します
+  url: "/install/concept_configure_secured_mysql_connections_with_snapcenter_server.html"
+- title: インストール中に Windows ホストで有効になる機能
+  url: "/install/reference_features_enabled_on_your_windows_host_during_installation.html"
