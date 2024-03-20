@@ -8710,4 +8710,8 @@ SnapCenter ユーザー・インターフェイスからログ・ファイルを
   <block id="66533c4e3134a6b220ad1336cd288c49" category="sidebar">ロールベースアクセス制御（ RBAC ）の設定</block>
   <block id="5d4caff07857398d579cdda92ce3f34f" category="sidebar">ストレージシステムをプロビジョニング</block>
   <block id="0daccd45abdac281e7508c5de0fa492c" category="sidebar">Windows ホストでストレージをプロビジョニングする</block>
+  <block id="4db35e04fa48549bd85b1a6d4d43fb09" category="list-text">SnapCenter 4.9 P1以降では、Amazon Web Services（AWS）のSoftware-Defined Data Center（SDDC）環境上のVMware Cloudで、OracleとMicrosoft SQLのワークロードの保護がサポートされます。</block>
+  <block id="38012dbc6542f17135111019d1839fa1" category="inline-link">VMware Cloud on AWS SDDC環境でNetApp SnapCenterを使用してOracleやMS SQLのワークロードを保護</block>
+  <block id="0ed5dc7c29240e260dcaa51a555687fb" category="paragraph">詳細については、を参照してください
+<block ref="201ce3916702c203a3d45750d51a4039" category="inline-link-rx"></block>。</block>
 </blocks>
