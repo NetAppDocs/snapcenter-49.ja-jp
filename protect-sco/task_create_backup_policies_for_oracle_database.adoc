@@ -107,7 +107,7 @@ NOTE: 削除処理を正常に行うには、 RAC 環境のすべてのノード
 
 |===
 +
-image:../media/sco_backuppolicy_prunning.gif[""]
+image:../media/sco_backuppolicy_prunning.gif["バックアップポリシーの削除"]
 
 
 

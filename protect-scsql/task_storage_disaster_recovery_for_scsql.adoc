@@ -45,7 +45,7 @@ link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-950/GUID-8
 * フェイルオーバー時に作成されたSnapCenter Plug-in for SQL Serverのバックアップは、UIまたは次のコマンドレットを使用して削除できます。 `Remove-SmBackup`
 * フェイルオーバー後、一部のリソースをDR以外のモードにするには、次のコマンドレットを使用します。 `Remove-SmResourceDRMode`
 +
-詳細については、を参照してください https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["SnapCenter ソフトウェアコマンドレットリファレンスガイド"^]。
+詳細については、を参照して https://docs.netapp.com/us-en/snapcenter-cmdlets-49/index.html["SnapCenter ソフトウェアコマンドレットリファレンスガイド"^]ください。
 
 * SnapCenter サーバは、 DR モードまたは非 DR モードの個々のストレージリソース（ SQL データベース）を管理しますが、 DR モードまたは非 DR モードのストレージリソースを含むリソースグループは管理しません。
 

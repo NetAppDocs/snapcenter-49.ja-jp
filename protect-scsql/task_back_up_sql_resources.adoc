@@ -41,12 +41,12 @@ summary: どのリソースグループにも含まれていないリソース�
 +
 .. [Policies] セクションで、ドロップダウンリストから 1 つ以上のポリシーを選択します。
 +
-ポリシーを作成するには、*を選択します。image:../media/add_policy_from_resourcegroup.gif[""]* をクリックして、ポリシーウィザードを起動します。
+ポリシーを作成するには、を選択しimage:../media/add_policy_from_resourcegroup.gif["リソースグループからポリシーを追加"]てポリシーウィザードを開始します。
 
 +
 [ 選択したポリシーのスケジュールを設定する *] セクションに、選択したポリシーが一覧表示されます。
 
-.. *を選択しますimage:../media/add_policy_from_resourcegroup.gif[""]* スケジュールを設定するポリシーの [ スケジュールの設定 ] 列。
+.. スケジュールを設定するポリシーの[Configure Schedules]列でを選択しますimage:../media/add_policy_from_resourcegroup.gif["リソースグループからポリシーを追加"]。
 .. をクリックし、ポリシー*のスケジュールを追加します `policy_name` ダイアログボックスでスケジュールを設定し、* OK *を選択します。
 +
 こちらをご覧ください `policy_name` は、選択したポリシーの名前です。
@@ -68,7 +68,7 @@ summary: どのリソースグループにも含まれていないリソース�
 NOTE: 検証サーバのバージョンは、プライマリデータベースをホストしている SQL Server のエディションと同じかそれ以上である必要があります。
 
 .. セカンダリ・ストレージ・システム上のバックアップを検証するには ' セカンダリ・ロケータをロードを選択します
-.. 検証スケジュールを設定するポリシーを選択し、*を選択します。image:../media/add_policy_from_resourcegroup.gif[""]*
+.. 検証スケジュールを設定するポリシーを選択し、を選択しますimage:../media/add_policy_from_resourcegroup.gif["リソースグループからポリシーを追加"]。
 .. Add Verification Schedules_policy_name_dialog box で、次の処理を実行します。
 +
 |===

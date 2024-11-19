@@ -205,5 +205,3 @@ ONTAP クラスタまたは SVM の通信ポート
 ローカル管理者の権限を持つユーザが、リモートホストに対してローカルログインの権限を持っている必要があります。クラスタノードを管理する場合は、クラスタ内のすべてのノードに対する管理者権限を持つユーザが必要です。
 
 SQL Server に対して sysadmin 権限を持つユーザが必要です。このプラグインは Microsoft VDI Framework を使用しますが、これには sysadmin アクセスが必要です。
-
-SnapManager for Microsoft SQL Server を使用していて、 SnapManager for Microsoft SQL Server から SnapCenter にデータをインポートする場合は、を参照してください link:../protect-scsql/concept_import_archived_backups_from_snapmanager_for_sql_to_snapcenter.html["アーカイブバックアップをインポートする"^]

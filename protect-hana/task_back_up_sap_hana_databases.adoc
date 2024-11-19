@@ -26,14 +26,13 @@ link:task_back_up_resource_groups_sap_hana.html["リソースグループをバ�
 
 * 1つ以上のテナントデータベースが停止しているときにファイルベースのバックアップを作成する場合は、を使用して、HANAプロパティファイルのallow_file_based_backup_IFINACTIVE_tenants_Presentパラメータを* YES *に設定します `Set-SmConfigSettings` コマンドレット。
 +
-コマンドレットで使用できるパラメータとその説明については、 Get-Help_command_name _ を実行して取得できます。または、を参照することもできます https://library.netapp.com/ecm/ecm_download_file/ECMLP2886205["SnapCenter ソフトウェアコマンドレットリファレンスガイド"]
+コマンドレットで使用できるパラメータとその説明については、 Get-Help_command_name _ を実行して取得できます。または、 https://docs.netapp.com/us-en/snapcenter-cmdlets-49/index.html["コマンドレットリファレンスガイド"^]
 
 * 休止、Snapshotコピー、および休止解除のプリコマンドおよびポストコマンドについては、プラグインホストで次のパスから使用可能なコマンドリストにコマンドが含まれていないかどうかを確認する必要があります。
 +
-Windowsの場合：_ C：\Program Files\NetApp\SnapCenter \Snapcenter Plug-in Creator\etc\allowed_commands _list .txt_
+** Windowsの場合：_C：\Program Files\NetApp\SnapCenter\Snapcenter Plug-in Creator\etc\allowed_commands.config_
+** Linux：_/var/opt/scc/allowed_commands.config SnapCenter
 
-+
-Linuxの場合：_/var/opt/snapcenter/scc/allowed _commands _list.txt_
 
 
 
@@ -44,7 +43,7 @@ NOTE: コマンドリストにコマンドがない場合、処理は失敗し�
 . 左側のナビゲーションペインで、*[リソース]*を選択し、リストから適切なプラグインを選択します。
 . リソースページで、リソースタイプに基づいて *View*] ドロップダウンリストからリソースをフィルタリングします。
 +
-*を選択しますimage:../media/filter_icon.png[""]* をクリックし、ホスト名とリソースタイプを選択してリソースをフィルタリングします。次に、 image:../media/filter_icon.png[""] をクリックしてフィルタペインを閉じます。
+を選択しimage:../media/filter_icon.gif["フィルタアイコン"]、ホスト名とリソースタイプを選択してリソースをフィルタリングします。その後、を選択してフィルタペインを閉じることができます image:../media/filter_icon.gif["フィルタアイコン"] 。
 
 . バックアップするリソースを選択します。
 . リソースページで、 Snapshot コピーに * カスタム名形式を使用する * を選択し、 Snapshot コピー名に使用するカスタム名形式を入力します。
@@ -107,7 +106,7 @@ Snapshot コピーを作成するコマンドを入力するには、次のコ�
 
 |===
 +
-image:../media/application_settings.gif[""]
+image:../media/application_settings.gif["アプリケーション設定"]
 
 
 
@@ -116,12 +115,12 @@ image:../media/application_settings.gif[""]
 .. ドロップダウンリストから 1 つ以上のポリシーを選択します。
 +
 
-NOTE: また、 * をクリックしてポリシーを作成することもできますimage:../media/add_policy_from_resourcegroup.gif[""]*
+NOTE: をクリックしてポリシーを作成することもできます。
 
 +
 [ 選択したポリシーのスケジュールを設定 ] セクションに、選択したポリシーが一覧表示されます。
 
-.. *を選択しますimage:../media/add_policy_from_resourcegroup.gif[""]* スケジュールを設定するポリシーの [ スケジュールの設定 ] 列。
+.. スケジュールを設定するポリシーの[Configure Schedules]列でを選択しますimage:../media/add_policy_from_resourcegroup.gif["リソースグループからポリシーを追加"]。
 .. [Add schedules for policy_policy_name_]ダイアログボックスで、スケジュールを設定し、*[OK]*を選択します。
 +
 _policy_name_は 、選択したポリシーの名前です。

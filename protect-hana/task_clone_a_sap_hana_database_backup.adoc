@@ -20,10 +20,9 @@ SnapCenter を使用してバックアップをクローニングすることが
 * ターゲットクローンサーバの SAP HANA インスタンス SID が、 Target Clone SID フィールドに入力されたものと同じであることが必要です。
 * クローニング前またはクローニング後のPREコマンドについては、次のパスから、プラグインホストのコマンドリストにコマンドが含まれているかどうかを確認する必要があります。
 +
-Windowsの場合：_ C：\Program Files\NetApp\SnapCenter \Snapcenter Plug-in Creator\etc\allowed_commands _list .txt_
+** Windowsの場合：_C：\Program NetApp SnapCenter SnapCenter Plug-in Creator\etc\allowed_commands.config_。
+** Linuxの場合：_/opt/scc/etc/allowed_commands.config_ SnapCenter。
 
-+
-Linuxの場合：_/var/opt/snapcenter/scc/allowed _commands _list.txt_
 
 
 

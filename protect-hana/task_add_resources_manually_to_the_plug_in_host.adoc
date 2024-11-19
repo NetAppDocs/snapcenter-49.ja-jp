@@ -90,7 +90,7 @@ HDB Secure User Store Key が設定されているユーザー名を入力しま
 |===
 . ストレージ容量の提供ページで、ストレージシステムを選択し、ボリューム、 LUN 、および qtree を 1 つ以上選択して、 * 保存 * をクリックします。
 +
-オプション：「 * 」をクリックしますimage:../media/add_policy_from_resourcegroup.gif[""]* アイコンをクリックして、他のストレージ・システムからボリューム、 LUN 、および qtree を追加します。
+オプション：他のストレージシステムからボリューム、LUN、およびqtreeを追加するには、アイコンをクリックしますimage:../media/add_policy_from_resourcegroup.gif["リソースグループからポリシーを追加"]。
 
 . 概要を確認し、 [ 完了 ] をクリックします。
 +

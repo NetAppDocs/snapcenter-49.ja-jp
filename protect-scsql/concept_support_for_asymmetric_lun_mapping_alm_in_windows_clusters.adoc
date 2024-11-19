@@ -21,7 +21,7 @@ ALM 構成の例を次に示します。
 * ディザスタリカバリサイトにスタンドアロンインスタンスを配置したディザスタリカバリ用のローカルの高可用性（ HA ）用 FCI および Availability Group （ AG ）
 
 
-image::../media/asymmetric_lun_mapping_diagram.gif[非対称 LUN マッピングの図]
+image::../media/asymmetric_lun_mapping_diagram.gif[ヒタイシヨウLUNマツヒンク]
 
 プライマリデータセンター内のストレージは、プライマリデータセンター内の FCI ノード間で共有されます。ディザスタリカバリデータセンター内のストレージは、ディザスタリカバリデータセンター内の FCI ノード間で共有されます。
 

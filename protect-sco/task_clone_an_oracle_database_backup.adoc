@@ -201,7 +201,7 @@ SnapCenter では、プリスクリプトとポストスクリプトを実行す
 
 .. Database Parameter settings セクションで、データベースの初期化に使用される、すでに入力されているデータベースパラメータの値を変更します。
 +
-* をクリックすると、パラメータを追加できますimage:../media/add_policy_from_resourcegroup.gif[""]*
+をクリックすると、パラメータを追加できますimage:../media/add_policy_from_resourcegroup.gif["リソースグループからポリシーを追加"]。
 
 +
 Oracle Standard Edition を使用していて、データベースがアーカイブログモードで実行されている場合、またはアーカイブ REDO ログからデータベースをリストアする場合は、パラメータを追加してパスを指定します。

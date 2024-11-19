@@ -15,7 +15,7 @@ SnapCenter の各リリースには、更新された SnapCenter Server およ�
 
 このワークフローは、 SnapCenter サーバとプラグインパッケージのアップグレードに必要なさまざまなタスクを示しています。
 
-image::../media/upgrade_workflow.png[アップグレードワークフロー]
+image::../media/upgrade_workflow.gif[SnapCenterのアップグレードワークフロー]
 
 
 
