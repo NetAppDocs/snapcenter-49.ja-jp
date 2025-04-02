@@ -137,4 +137,4 @@ DRバックアップを格納するターゲットパスを指定する必要が
 
 |===
 .関連情報
-を参照してください link:https://www.youtube.com/watch?v=Nbr_wm9Cnd4&list=PLdXI3bZJEw7nofM6lN44eOe4aOSoryckg["ディザスタリカバリ API"^] ビデオ：
+ビデオを参照してください link:https://www.youtube.com/watch?v=_8NG-tTGy8k&list=PLdXI3bZJEw7nofM6lN44eOe4aOSoryckg["ディザスタリカバリ API"^] 。

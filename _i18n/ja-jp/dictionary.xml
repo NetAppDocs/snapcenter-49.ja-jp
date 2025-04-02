@@ -37,7 +37,6 @@
   <block id="9f2c74676fb5b339a2fd4a0ccd75bd1e" category="list-text">Windows スケジュールと SQL スケジュールを、 DR バックアップから SnapCenter Plug-in for SQL Server フォルダからインポートします。</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="paragraph-title">関連情報</block>
   <block id="27e7993c4841ae5fd670cdd945ccb96d" category="inline-link-macro">ディザスタリカバリ API</block>
-  <block id="ab9238ca6f628634f6f6f2cf63502cdb" category="paragraph">を参照してください <block ref="44de5c9fafab2e4e76e19e3717abc2e2" category="inline-link-macro-rx"></block> ビデオ：</block>
   <block id="d2323db6aa3f6333b1375db7f025bd4e" category="summary">PowerShell コマンドレットを使用して、 SQL Server データベースや Windows ファイルシステムをバックアップできます。たとえば、 SQL Server データベースまたは Windows ファイルシステムのバックアップでは、 SnapCenter サーバとの接続の確立、 SQL Server データベースインスタンスまたは Windows ファイルシステムの検出、ポリシーの追加、バックアップリソースグループの作成、バックアップ、およびバックアップの検証が行われます。</block>
   <block id="c90de0347e94ade70c96034e2ffca3ba" category="list-text">PowerShell コマンドレットを実行できるように PowerShell 環境を準備しておく必要があります。</block>
   <block id="38d7f66964588305ed5bee44db007183" category="list-text">ストレージシステム接続を追加し、クレデンシャルを作成しておく必要があります。</block>
@@ -3016,7 +3015,6 @@ SMBR の使用方法については、を参照してください<block ref="ec4
   <block id="f367d650e57088caf7b808e01235016d" category="inline-link">SnapCenter を使用して SMBR のセカンダリストレージからリストアする方法</block>
   <block id="41b4c689a8b0e3ba8bfecb2a1e608e46" category="list-text"><block ref="41b4c689a8b0e3ba8bfecb2a1e608e46" category="inline-link-rx"></block></block>
   <block id="f004280f6db6ea5f9302c9851388d751" category="inline-link">SMBR を使用した SnapVault からの Microsoft Exchange メールのリカバリ</block>
-  <block id="1b0fb59a5bc951f7dc82cb43fe362145" category="list-text"><block ref="00a76af185a73b84e54e96058031aef5" category="inline-link-rx"></block></block>
   <block id="a60fa87356b70c5ce00706b76533d56c" category="summary">Plug-in for Exchange は、 SnapCenter ユーザインターフェイス内からインストールする必要があります。ただし、何らかの理由でインストールできない場合は、 Windows のコマンドラインから、 Plug-in for Exchange のインストールプログラムをサイレントモードで自動的に実行できます。</block>
   <block id="d09d97061d337ca456268467edcaf423" category="doc">コマンドラインから SnapCenter Plug-in for Exchange をサイレントにインストールします</block>
   <block id="cd61155a270b0e3cba1a35778af0b9ce" category="list-text">Microsoft Exchange Server リソースをバックアップしておく必要があります。</block>
@@ -8711,4 +8709,6 @@ SnapCenter ユーザー・インターフェイスからログ・ファイルを
   <block id="df572e132ba2f886e42786dc14efa7eb" category="paragraph">コマンドレットで使用できるパラメータとその説明については、 RUN_Get-Help コマンド _NAME_ を実行して参照できます。または、を参照することもできます<block ref="0f4700d6d1275866f1a52a4d6a58d871" category="inline-link-rx"></block>。</block>
   <block id="86e30ad0a02c8fe2c3f0a07c63314b32" category="image-alt">SnapCenterのアップグレードワークフロー</block>
   <block id="d127c7070231e882bd97e8f2760d0a4f" category="sidebar">SnapCenter ソフトウェアのドキュメント</block>
+  <block id="c23d56866a5b11fd0d8dc189fcf21298" category="list-text"><block ref="341e3fddad4b27511133b6917a75bb8a" category="inline-link-rx"></block></block>
+  <block id="57cf9c4ee485623172a5c60cbee423a4" category="paragraph">ビデオを参照してください <block ref="96716f545c5cf1a209bf10c1a798ce38" category="inline-link-macro-rx"></block> 。</block>
 </blocks>
